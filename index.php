@@ -95,11 +95,13 @@ var_dump($productions);
                         <?php foreach ($productions as $index => $production) { ?>
                             <ul class="card">
 
-                                <li><?php echo $production->title ?></li>
+                                <li>Il titoto é :<?php echo $production->title ?></li>
                                 <li><?php echo $production->language ?></li>
                                 <li><?php echo $production->rating ?></li>    
-                                <?php   ?>
-                                <?php  ?>
+                                <?php if($production->season !== null) {?>
+                                    <li><?php echo $production->season?></li>   
+                              <?php  }  ?> 
+                                  
                             </ul>
                         <?php } ?>
 
