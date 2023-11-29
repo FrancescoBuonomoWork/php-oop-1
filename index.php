@@ -3,6 +3,7 @@
 require_once __DIR__ . './Models/Production.php';
 require_once __DIR__ . './Models/Actor.php';
 require_once __DIR__ . './Models/Movie.php';
+require_once __DIR__ . './Models/Serie.php';
 
 $protagonista_ilSignoreDegliAnelli = new Actor('Elijah Wood', 'Frodo Baggins');
 $protagonista2 = new Actor('gianni', 'giangi');
@@ -30,6 +31,8 @@ $movies = [
 // -------------------------------------------
 $movie = new Movie('smetto quando voglio','it',8, 50 , 70);
 var_dump($movie);
+$serie1 = new Serie('chicago fire','en',8 ,1);
+var_dump($serie1);
 ?>
 
 <!DOCTYPE html>
