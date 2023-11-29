@@ -5,6 +5,13 @@ require_once __DIR__ . './Models/Actor.php';
 require_once __DIR__ . './Models/Movie.php';
 require_once __DIR__ . './Models/Serie.php';
 
+
+// function stampaInfo(Production $production)
+// {
+//     return $production->getInfo();
+// }
+
+
 $protagonista_ilSignoreDegliAnelli = new Actor('Elijah Wood', 'Frodo Baggins');
 $protagonista2 = new Actor('gianni', 'giangi');
 $ritornoAlCrimine = new Production('Ritorno Al Crimine', 'it', 8);
@@ -29,17 +36,17 @@ $movies = [
 ];
 // var_dump($movies);
 // -------------------------------------------
-$movie1 = new Movie('smetto quando voglio','it',8, 50 , 100);
-$movie2 = new Movie('joker','en',8, 1,120);
-$movie3 = new Movie('oppenheimer','en',9, 10,160);
-$movie4 = new Movie('barbie','en',6, 10,120);
-$movie5 = new Movie('Jumanji','en',9, 7,140);
+$movie1 = new Movie('smetto quando voglio', 'it', 8, 50, 100);
+$movie2 = new Movie('joker', 'en', 8, 1, 120);
+$movie3 = new Movie('oppenheimer', 'en', 9, 10, 160);
+$movie4 = new Movie('barbie', 'en', 6, 10, 120);
+$movie5 = new Movie('Jumanji', 'en', 9, 7, 140);
 // var_dump($movie1);
-$serie1 = new Serie('chicago fire','en',7 ,1);
-$serie2 = new Serie('attack on titan','jp',10,4);
-$serie3 = new Serie('the big bang theory','en',7 ,5);
-$serie4 = new Serie('the mentalist','en',8 ,2);
-$serie5 = new Serie('how i meet your mother','en',9 ,6);
+$serie1 = new Serie('chicago fire', 'en', 7, 1);
+$serie2 = new Serie('attack on titan', 'jp', 10, 4);
+$serie3 = new Serie('the big bang theory', 'en', 7, 5);
+$serie4 = new Serie('the mentalist', 'en', 8, 2);
+$serie5 = new Serie('how i meet your mother', 'en', 9, 6);
 
 $productions = [
     $movie1,
@@ -54,7 +61,8 @@ $productions = [
     $serie5
 ];
 
-var_dump($productions);
+// var_dump($productions);
+
 ?>
 
 <!DOCTYPE html>
@@ -96,12 +104,12 @@ var_dump($productions);
                             <ul class="card">
 
                                 <li>Il titoto é :<?php echo $production->title ?></li>
-                                <li><?php echo $production->language ?></li>
-                                <li><?php echo $production->rating ?></li>    
-                                <?php if($production->season !== null) {?>
-                                    <li><?php echo $production->season?></li>   
-                              <?php  }  ?> 
-                                  
+                                <li>La lingua orginale é : <?php echo $production->language ?></li>
+                                <li>Voto : <?php echo $production->rating ?></li>
+                                <!-- faccio il foreach di $production->getInfos() che é un array di proprietá derivanti da production e gestite nelle rispettive classi dove stampo la chiave é il valore corrispondente -->
+                                <?php foreach ($production->getInfos() as $key => $value) : ?>
+                                    <li><?php echo $key ?>: <?php echo $value ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         <?php } ?>
 

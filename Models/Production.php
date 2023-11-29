@@ -65,4 +65,10 @@ class Production
             $this->cast[] = $newCastMember;
         }
     }
+
+    public function getInfos() {
+        return [
+            // 'titolo' => $this->title
+        ];
+    }
 }

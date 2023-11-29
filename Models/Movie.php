@@ -31,7 +31,13 @@ class Movie extends Production {
         return $this->duration;
     }
 
-
+    public function getInfos() {
+        return [
+            // 'titolo' => $this->title,
+            'profitto' => $this->profit,
+            'durata' => $this->duration
+        ];
+    }
 
 
 }
