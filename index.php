@@ -29,10 +29,32 @@ $movies = [
 ];
 // var_dump($movies);
 // -------------------------------------------
-$movie = new Movie('smetto quando voglio','it',8, 50 , 70);
-var_dump($movie);
-$serie1 = new Serie('chicago fire','en',8 ,1);
-var_dump($serie1);
+$movie1 = new Movie('smetto quando voglio','it',8, 50 , 100);
+$movie2 = new Movie('joker','en',8, 1,120);
+$movie3 = new Movie('oppenheimer','en',9, 10,160);
+$movie4 = new Movie('barbie','en',6, 10,120);
+$movie5 = new Movie('Jumanji','en',9, 7,140);
+// var_dump($movie1);
+$serie1 = new Serie('chicago fire','en',7 ,1);
+$serie2 = new Serie('attack on titan','jp',10,4);
+$serie3 = new Serie('the big bang theory','en',7 ,5);
+$serie4 = new Serie('the mentalist','en',8 ,2);
+$serie5 = new Serie('how i meet your mother','en',9 ,6);
+
+$productions = [
+    $movie1,
+    $movie2,
+    $movie3,
+    $movie4,
+    $movie5,
+    $serie1,
+    $serie2,
+    $serie3,
+    $serie4,
+    $serie5
+];
+
+var_dump($productions);
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +69,7 @@ var_dump($serie1);
 
 <body>
     <div>
-        <section>
+        <!-- <section>
             <div class="container">
                 <div class="row">
                     <div class="col">
@@ -58,6 +80,26 @@ var_dump($serie1);
                                 <li><?php echo $movie->language ?></li>
                                 <li><?php echo $movie->rating ?></li>    
                                 
+                            </ul>
+                        <?php } ?>
+
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <?php foreach ($productions as $index => $production) { ?>
+                            <ul class="card">
+
+                                <li><?php echo $production->title ?></li>
+                                <li><?php echo $production->language ?></li>
+                                <li><?php echo $production->rating ?></li>    
+                                <?php   ?>
+                                <?php  ?>
                             </ul>
                         <?php } ?>
 
